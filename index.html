@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7 Núi Travel — Du Lịch Nghỉ Dưỡng & Chữa Lành Bảy Núi An Giang</title>
-  <meta name="description" content="7 Núi Travel — Hành trình du lịch nghỉ dưỡng, buông bỏ áp lực công việc, tìm lại sự an yên giữa mây ngàn Thất Sơn và rừng tràm Trà Sư, An Giang.">
+  <title>7 Núi Travel — Du Lịch Nghỉ Dưỡng & Thư Giãn Giữa Thiên Nhiên Bảy Núi An Giang</title>
+  <meta name="description" content="7 Núi Travel — Hành trình du lịch nghỉ dưỡng, sống chậm lại và hòa mình vào thiên nhiên giữa mây ngàn Thất Sơn và rừng tràm Trà Sư, An Giang.">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -106,25 +106,15 @@
         <img src="./assets/logo.jpg" alt="7 Núi Travel Logo" class="w-12 h-12 rounded-2xl object-cover shadow-md border border-[#264638]/20 dark:border-[#C88D3D]/30 group-hover:scale-105 transition-transform duration-300 shrink-0">
         <div class="whitespace-nowrap">
           <span class="font-serif text-xl xl:text-2xl font-bold tracking-wide text-[#264638] dark:text-[#C88D3D] block leading-tight">7 NÚI TRAVEL</span>
-          <span class="hidden sm:block text-[10px] xl:text-[11px] font-medium tracking-widest uppercase text-stone-500 dark:text-stone-400 -mt-0.5">Nghỉ Dưỡng & Chữa Lành Thất Sơn</span>
+          <span class="hidden sm:block text-[10px] xl:text-[11px] font-medium tracking-widest uppercase text-stone-500 dark:text-stone-400 -mt-0.5">Nghỉ Dưỡng & Thư Giãn Thất Sơn</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Menu -->
-      <nav class="hidden xl:flex items-center gap-5 2xl:gap-7 text-sm font-medium text-stone-700 dark:text-stone-300 shrink-0">
-        <a href="#about" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Về 7 Núi</a>
-        <a href="#the-mirror" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Nỗi Niềm Cần Buông</a>
-        <a href="#tours" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Hành Trình Chữa Lành</a>
-        <a href="#scenery" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Cảnh Sắc An Giang</a>
-        <a href="#quiz" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Trắc Nghiệm Tâm Trí</a>
-        <a href="#stories" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Chuyện Khách Đi</a>
-      </nav>
-
       <!-- Header Tools & CTA -->
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
 
-        <!-- Ambient Zen Sound Player Button (ẩn dưới lg để nhường chỗ, hotline đã có trên thanh triết lý) -->
-        <button id="ambient-sound-toggle" class="hidden lg:flex px-3 py-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-800/60 text-xs font-medium text-stone-600 dark:text-stone-300 hover:border-[#C88D3D] transition-all items-center gap-2 focus:outline-none" title="Bật/Tắt tiếng chuông thiền thư giãn">
+        <!-- Ambient Zen Sound Player Button (ẩn dưới md để tiết kiệm chỗ) -->
+        <button id="ambient-sound-toggle" class="hidden md:flex px-3 py-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-800/60 text-xs font-medium text-stone-600 dark:text-stone-300 hover:border-[#C88D3D] transition-all items-center gap-2 focus:outline-none shrink-0" title="Bật/Tắt tiếng chuông thiền thư giãn">
           <div class="flex items-end h-4">
             <span class="sound-bar"></span>
             <span class="sound-bar"></span>
@@ -139,6 +129,24 @@
           <i data-lucide="sun" class="theme-icon-sun w-4 h-4"></i>
           <i data-lucide="moon" class="theme-icon-moon w-4 h-4 hidden"></i>
         </button>
+
+        <!-- Nav Menu Dropdown Toggle: gọn nhẹ để không bao giờ tràn khỏi header, thay cho nav ngang cũ -->
+        <div class="relative shrink-0">
+          <button id="nav-menu-toggle" class="p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl border border-stone-300 dark:border-stone-700 text-stone-600 dark:text-stone-300 hover:border-[#C88D3D] hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors focus:outline-none flex items-center gap-2" aria-label="Mở menu điều hướng" aria-expanded="false">
+            <i data-lucide="menu" class="w-4 h-4"></i>
+            <span class="hidden sm:inline text-sm font-medium whitespace-nowrap">Danh Mục</span>
+          </button>
+
+          <!-- Dropdown Panel -->
+          <div id="nav-menu-dropdown" class="hidden absolute right-0 mt-2 w-64 rounded-2xl zen-card border border-stone-200 dark:border-stone-800 shadow-2xl overflow-hidden py-2 z-50">
+            <a href="#about" class="nav-menu-link block px-4 py-2.5 text-sm font-medium text-stone-700 dark:text-stone-300 hover:bg-[#264638]/10 dark:hover:bg-[#C88D3D]/10 hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Về 7 Núi</a>
+            <a href="#the-mirror" class="nav-menu-link block px-4 py-2.5 text-sm font-medium text-stone-700 dark:text-stone-300 hover:bg-[#264638]/10 dark:hover:bg-[#C88D3D]/10 hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Cần Một Khoảng Lặng?</a>
+            <a href="#tours" class="nav-menu-link block px-4 py-2.5 text-sm font-medium text-stone-700 dark:text-stone-300 hover:bg-[#264638]/10 dark:hover:bg-[#C88D3D]/10 hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Hành Trình Nghỉ Dưỡng</a>
+            <a href="#scenery" class="nav-menu-link block px-4 py-2.5 text-sm font-medium text-stone-700 dark:text-stone-300 hover:bg-[#264638]/10 dark:hover:bg-[#C88D3D]/10 hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Cảnh Sắc An Giang</a>
+            <a href="#quiz" class="nav-menu-link block px-4 py-2.5 text-sm font-medium text-stone-700 dark:text-stone-300 hover:bg-[#264638]/10 dark:hover:bg-[#C88D3D]/10 hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Trắc Nghiệm Tâm Trí</a>
+            <a href="#stories" class="nav-menu-link block px-4 py-2.5 text-sm font-medium text-stone-700 dark:text-stone-300 hover:bg-[#264638]/10 dark:hover:bg-[#C88D3D]/10 hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Chuyện Khách Đi</a>
+          </div>
+        </div>
 
         <!-- Open Pop-up Tour Booking Button -->
         <button class="open-tour-modal px-3 sm:px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#264638] hover:bg-[#1B352A] dark:bg-[#C88D3D] dark:text-[#141D17] dark:hover:bg-[#B2792D] shadow-sm hover:shadow-md transition-all flex items-center gap-2 shrink-0" data-tour="Tư vấn chung">
@@ -167,7 +175,7 @@
 
           <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-stone-900 dark:text-stone-50 leading-[1.2] mb-6">
             Bao Lâu Rồi Bạn Chưa Thở Một Hơi Thật Sâu <br class="hidden sm:inline">
-            <span class="italic text-[#264638] dark:text-[#C88D3D]">Mà Không Nghĩ Về Deadline?</span>
+            <span class="italic text-[#264638] dark:text-[#C88D3D]">Thong Thả, Không Vướng Bận?</span>
           </h1>
 
           <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 leading-relaxed mb-8 max-w-xl">
@@ -177,7 +185,7 @@
           <!-- CTAs -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
             <a href="#tours" class="px-8 py-4 rounded-2xl font-bold text-base text-center text-white bg-[#264638] hover:bg-[#1B352A] dark:bg-[#C88D3D] dark:text-[#141D17] dark:hover:bg-[#B2792D] shadow-lg shadow-[#264638]/20 dark:shadow-none transition-all flex items-center justify-center gap-2">
-              <span>Xem Các Chuyến Đi Chữa Lành</span>
+              <span>Xem Các Chuyến Đi Thư Giãn</span>
               <i data-lucide="arrow-down" class="w-4 h-4"></i>
             </a>
             
@@ -252,53 +260,53 @@
     </section>
 
     <!-- ==============================================================
-         THE MIRROR: THẤU HIỂU NHỮNG NỖI ĐAU & ÁP LỰC (MARKETING HOOK)
+         THE MIRROR: NHỮNG KHOẢNH KHẮC QUEN THUỘC CỦA NHỊP SỐNG BẬN RỘN
          ============================================================== -->
     <section id="the-mirror" class="py-20 bg-stone-100/70 dark:bg-[#121A15] border-y border-stone-200 dark:border-stone-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div class="text-center max-w-3xl mx-auto mb-16">
           <span class="text-xs font-bold uppercase tracking-widest text-[#264638] dark:text-[#C88D3D]">Lắng nghe chính mình</span>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4">
-            Có Phải Bạn Đang Mang Trong Mình Những Nỗi Niềm Này?
+            Đã Đến Lúc Chậm Lại Một Chút Chưa?
           </h2>
           <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300">
-            Chúng ta thường chăm sóc cho mục tiêu, kế hoạch của người khác, nhưng lại bỏ quên chính tâm hồn mình đang kiệt sức từng ngày.
+            Chúng ta thường bận rộn chạy theo công việc và những kế hoạch dở dang, mà quên mất đôi khi bản thân cũng cần một khoảng nghỉ đúng nghĩa.
           </p>
         </div>
 
-        <!-- 4 Pain Points Cards -->
+        <!-- 4 Khoảnh Khắc Quen Thuộc -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
+
           <div class="zen-card p-6 rounded-2xl border border-stone-200 dark:border-stone-800 relative">
             <div class="text-3xl font-serif font-bold text-[#C88D3D] mb-3">01</div>
-            <h3 class="text-lg font-bold mb-2">Thức Dậy Với Cảm Giác Cạn Kiệt</h3>
+            <h3 class="text-lg font-bold mb-2">Buổi Sáng Cứ Muốn Nằm Thêm Chút Nữa</h3>
             <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-              Ngủ dậy nhưng đầu óc vẫn nặng trĩu. Cảm giác sợ hãi tiếng chuông báo thức và những dòng tin nhắn công việc chờ sẵn mỗi ban mai.
+              Ngủ dậy nhưng vẫn còn lười biếng, chỉ muốn có thêm vài phút yên tĩnh trước khi bắt đầu một ngày mới.
             </p>
           </div>
 
           <div class="zen-card p-6 rounded-2xl border border-stone-200 dark:border-stone-800 relative">
             <div class="text-3xl font-serif font-bold text-[#C88D3D] mb-3">02</div>
-            <h3 class="text-lg font-bold mb-2">Quá Tải Với Vòng Xoáy Deadline</h3>
+            <h3 class="text-lg font-bold mb-2">Lịch Trình Cứ Nối Tiếp Nhau Không Ngừng</h3>
             <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-              Vừa xong dự án này đã phải lo chỉ tiêu tháng tới. Bạn không nhớ lần gần nhất mình ăn một bữa cơm trọn vẹn mà không nhìn vào màn hình là khi nào.
+              Vừa xong việc này đã đến việc khác, hiếm khi có được một bữa ăn thong thả mà không nhìn vào màn hình điện thoại.
             </p>
           </div>
 
           <div class="zen-card p-6 rounded-2xl border border-stone-200 dark:border-stone-800 relative">
             <div class="text-3xl font-serif font-bold text-[#C88D3D] mb-3">03</div>
-            <h3 class="text-lg font-bold mb-2">Trống Rỗng & Lạc Lõng</h3>
+            <h3 class="text-lg font-bold mb-2">Thèm Một Khoảng Không Gian Riêng</h3>
             <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-              Dù đạt được mục tiêu hay doanh số, bên trong bạn vẫn cảm thấy một khoảng trống hoang hoải, không biết mình đang vất vả vì điều gì.
+              Đôi khi chỉ muốn tạm rời xa phố thị ồn ào, tìm một nơi yên tĩnh để ngồi yên và ngắm nhìn xung quanh.
             </p>
           </div>
 
           <div class="zen-card p-6 rounded-2xl border border-stone-200 dark:border-stone-800 relative">
             <div class="text-3xl font-serif font-bold text-[#C88D3D] mb-3">04</div>
-            <h3 class="text-lg font-bold mb-2">Chưa Từng Cho Phép Mình Được Yếu Đuối</h3>
+            <h3 class="text-lg font-bold mb-2">Ít Khi Cho Phép Mình Được Nghỉ Ngơi</h3>
             <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
-              Bạn luôn phải gồng mình làm người kiên cường, làm chỗ dựa cho tập thể, để rồi tự ôm lấy những muộn phiền một mình trong đêm.
+              Luôn bận rộn lo cho công việc, gia đình, bạn bè, mà quên mất dành một chút thời gian cho riêng mình.
             </p>
           </div>
 
@@ -472,25 +480,25 @@
     </section>
 
     <!-- ==============================================================
-         CÁC HÀNH TRÌNH CHỮA LÀNH ĐẶC QUYỀN (PACKAGES)
+         CÁC HÀNH TRÌNH NGHỈ DƯỠNG ĐẶC QUYỀN (PACKAGES)
          ============================================================== -->
     <section id="tours" class="py-24 bg-stone-100/60 dark:bg-[#111913] border-t border-stone-200 dark:border-stone-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#264638] dark:text-[#C88D3D]">Liệu pháp tinh thần</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#264638] dark:text-[#C88D3D]">Trải nghiệm nghỉ dưỡng</span>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mt-2 mb-4">
-            Những Chuyến Đi Chữa Lành Thiết Kế Riêng
+            Những Chuyến Đi Thư Giãn Được Thiết Kế Riêng
           </h2>
           <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 mb-8">
-            Mỗi hành trình là một không gian nâng đỡ cảm xúc, tối đa 8 khách/chuyến để đảm bảo sự riêng tư và chăm sóc chu đáo nhất.
+            Mỗi hành trình là một không gian nhẹ nhàng, tối đa 8 khách/chuyến để đảm bảo sự riêng tư và chăm sóc chu đáo nhất.
           </p>
 
           <!-- Duration Filter Tabs -->
           <div class="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-white/80 dark:bg-stone-900/80 border border-stone-200 dark:border-stone-800">
             <button class="tour-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#264638] text-white dark:bg-[#C88D3D] dark:text-[#121C16] transition-all" data-filter="all">Tất Cả Chuyến Đi</button>
             <button class="tour-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700 transition-all" data-filter="2n1d">2 Ngày 1 Đêm</button>
-            <button class="tour-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700 transition-all" data-filter="3n2d">3 Ngày 2 Đêm (Chữa lành sâu)</button>
+            <button class="tour-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700 transition-all" data-filter="3n2d">3 Ngày 2 Đêm (Nghỉ dưỡng trọn vẹn)</button>
             <button class="tour-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700 transition-all" data-filter="1d">1 Ngày Tĩnh Tâm</button>
           </div>
         </div>
@@ -549,7 +557,7 @@
           <!-- Tour 2 (Signature - Highlighted) -->
           <div class="tour-card zen-card rounded-3xl overflow-hidden flex flex-col justify-between border-2 border-[#C88D3D] relative shadow-xl" data-duration="3n2d">
             <div class="absolute top-4 right-4 z-10 px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-[#C88D3D] text-[#141D17] shadow">
-              Chữa Lành Sâu
+              Nghỉ Dưỡng Trọn Vẹn
             </div>
 
             <div>
@@ -572,7 +580,7 @@
                 <div class="space-y-3 text-xs sm:text-sm text-stone-600 dark:text-stone-300 mb-8">
                   <div class="flex items-start gap-2.5">
                     <i data-lucide="heart-handshake" class="w-4 h-4 text-[#C88D3D] shrink-0 mt-0.5"></i>
-                    <span><strong>Liệu pháp Digital Detox:</strong> Tạm cất điện thoại, sạc lại tinh thần</span>
+                    <span><strong>Trải nghiệm Digital Detox:</strong> Tạm cất điện thoại, thảnh thơi tận hưởng</span>
                   </div>
                   <div class="flex items-start gap-2.5">
                     <i data-lucide="check-circle-2" class="w-4 h-4 text-[#C88D3D] shrink-0 mt-0.5"></i>
@@ -580,7 +588,7 @@
                   </div>
                   <div class="flex items-start gap-2.5">
                     <i data-lucide="check-circle-2" class="w-4 h-4 text-[#C88D3D] shrink-0 mt-0.5"></i>
-                    <span>Buổi trị liệu chuông xoay Tây Tạng & trà đạo thanh tịnh</span>
+                    <span>Buổi thiền chuông thư giãn & trà đạo thanh tịnh</span>
                   </div>
                   <div class="flex items-start gap-2.5">
                     <i data-lucide="check-circle-2" class="w-4 h-4 text-[#C88D3D] shrink-0 mt-0.5"></i>
@@ -597,7 +605,7 @@
             <div class="p-6 sm:p-8 pt-0">
               <button class="open-tour-modal w-full py-4 rounded-xl font-bold text-sm text-center text-[#141D17] bg-[#C88D3D] hover:bg-[#B2792D] shadow-md transition-all flex items-center justify-center gap-2" data-tour="Sương Mây Đỉnh Cấm Sơn — Digital Detox (3N2D)">
                 <i data-lucide="sparkles" class="w-4 h-4"></i>
-                <span>Đăng Ký Hành Trình Chữa Lành Sâu</span>
+                <span>Đăng Ký Hành Trình Nghỉ Dưỡng Này</span>
               </button>
             </div>
           </div>
@@ -656,53 +664,53 @@
     </section>
 
     <!-- ==============================================================
-         TRẮC NGHIỆM TÂM TRÍ (BURNOUT ASSESSMENT & CONVERSION HOOK)
+         TÌM CHUYẾN ĐI HỢP TÂM TRẠNG (QUIZ NHẸ NHÀNG & CONVERSION HOOK)
          ============================================================== -->
     <section id="quiz" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="zen-card p-8 sm:p-12 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-xl">
-        
+
         <div class="text-center mb-10">
           <span class="text-xs font-bold uppercase tracking-widest text-[#264638] dark:text-[#C88D3D]">Trắc nghiệm ngắn 30 giây</span>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 mb-3">Kiểm Tra Mức Độ Cần Nghỉ Ngơi Của Bạn</h2>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 mb-3">Tìm Chuyến Đi Hợp Với Tâm Trạng Của Bạn</h2>
           <p class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 max-w-lg mx-auto">
-            Hãy lắng nghe trung thực tiếng nói bên trong để tìm ra chuyến đi xoa dịu đúng nhất cho bạn lúc này.
+            Chỉ mất 30 giây để tìm ra chuyến đi phù hợp nhất với sở thích của bạn lúc này.
           </p>
         </div>
 
         <div class="space-y-6">
           <!-- Q1 -->
           <div>
-            <label class="block text-sm font-bold mb-3 text-stone-800 dark:text-stone-200">1. Khi thức dậy vào buổi sáng ngày làm việc, cảm xúc của bạn là gì?</label>
+            <label class="block text-sm font-bold mb-3 text-stone-800 dark:text-stone-200">1. Bạn muốn buổi sáng của chuyến đi bắt đầu như thế nào?</label>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors">
                 <input type="radio" name="quiz-q1" value="mild" class="text-[#264638] focus:ring-0">
-                <span class="text-xs sm:text-sm">Hơi uể oải, chỉ mong sớm đến cuối tuần</span>
+                <span class="text-xs sm:text-sm">Nhẹ nhàng, dậy trễ một chút cũng được</span>
               </label>
               <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors">
                 <input type="radio" name="quiz-q1" value="severe" class="text-[#264638] focus:ring-0">
-                <span class="text-xs sm:text-sm">Nặng nề, kiệt sức và cảm thấy áp lực đè nặng</span>
+                <span class="text-xs sm:text-sm">Thật chậm, có thật nhiều thời gian cho riêng mình</span>
               </label>
             </div>
           </div>
 
           <!-- Q2 -->
           <div>
-            <label class="block text-sm font-bold mb-3 text-stone-800 dark:text-stone-200">2. Bạn có thói quen kiểm tra email hay tin nhắn công việc ngoài giờ không?</label>
+            <label class="block text-sm font-bold mb-3 text-stone-800 dark:text-stone-200">2. Bạn muốn tạm rời xa điện thoại trong chuyến đi này đến mức nào?</label>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors">
                 <input type="radio" name="quiz-q2" value="mild" class="text-[#264638] focus:ring-0">
-                <span class="text-xs sm:text-sm">Thỉnh thoảng khi có việc thực sự khẩn cấp</span>
+                <span class="text-xs sm:text-sm">Thỉnh thoảng xem qua một chút cũng được</span>
               </label>
               <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors">
                 <input type="radio" name="quiz-q2" value="severe" class="text-[#264638] focus:ring-0">
-                <span class="text-xs sm:text-sm">Liên tục cả tối, giật mình mỗi khi chuông reo</span>
+                <span class="text-xs sm:text-sm">Muốn tắt hẳn, không đụng đến điện thoại</span>
               </label>
             </div>
           </div>
 
           <!-- Q3 -->
           <div>
-            <label class="block text-sm font-bold mb-3 text-stone-800 dark:text-stone-200">3. Điều bạn khao khát nhất lúc này là gì?</label>
+            <label class="block text-sm font-bold mb-3 text-stone-800 dark:text-stone-200">3. Điều bạn mong muốn nhất cho chuyến đi này là gì?</label>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <label class="flex items-center gap-3 p-3.5 rounded-xl border border-stone-200 dark:border-stone-800 cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors">
                 <input type="radio" name="quiz-q3" value="silence" class="text-[#264638] focus:ring-0">
@@ -726,7 +734,7 @@
         <div id="quiz-result" class="hidden mt-8 pt-8 border-t border-stone-200 dark:border-stone-800 text-center animate-fade-in">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-bold mb-3">
             <i data-lucide="compass" class="w-4 h-4"></i>
-            <span>HÀNH TRÌNH ĐƯỢC THIẾT KẾ CHO TÌNH TRẠNG CỦA BẠN</span>
+            <span>HÀNH TRÌNH GỢI Ý DÀNH CHO BẠN</span>
           </div>
           <h3 id="quiz-tour-name" class="font-serif text-2xl sm:text-3xl font-bold text-[#264638] dark:text-[#C88D3D] mb-2">
             Tour "Sương Mây Đỉnh Cấm Sơn — Digital Detox" (3N2D)
@@ -756,7 +764,7 @@
               Chúng Tôi Không Bán Những Chuyến Đi Ồn Ào, Chúng Tôi Mang Lại Sự Tĩnh Lặng
             </h2>
             <p class="text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
-              7 Núi Travel được sáng lập bởi những người con sinh ra dưới bóng núi Thất Sơn và từng có nhiều năm chịu đựng áp lực văn phòng tại Sài Gòn. Chúng tôi hiểu sâu sắc cảm giác kiệt quệ và nhận ra rằng: <em>liều thuốc chữa lành tốt nhất chính là thiên nhiên tĩnh lặng và sự lắng nghe chân thành.</em>
+              7 Núi Travel được sáng lập bởi những người con sinh ra dưới bóng núi Thất Sơn và từng có nhiều năm sinh sống, làm việc tại Sài Gòn. Chúng tôi hiểu rằng đôi khi điều mỗi người cần chỉ là <em>một nơi thiên nhiên tĩnh lặng để được sống chậm lại và lắng nghe chính mình.</em>
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -809,7 +817,7 @@
             Khách Đi Kể Lại Sau Chuyến Về Bảy Núi
           </h2>
           <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300">
-            Không phải lời quảng cáo, đây là những cảm xúc chân thực nhất khi được gỡ bỏ áp lực.
+            Không phải lời quảng cáo, đây là những cảm nhận chân thực nhất sau mỗi chuyến đi.
           </p>
         </div>
 
@@ -817,7 +825,7 @@
           
           <div class="zen-card p-8 rounded-3xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between">
             <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6 italic">
-              "Làm lead marketing suốt 4 năm, tôi bị mất ngủ kinh niên và sợ tiếng thông báo Slack. Chuyến đi 3N2D lên Núi Cấm là lần đầu tiên tôi dám tắt điện thoại 48 tiếng. Thật kỳ diệu là không có deadline nào làm thế giới sụp đổ cả, chỉ có tôi tìm lại được giấc ngủ ngon lành như thuở bé."
+              "Công việc marketing khiến tôi lúc nào cũng dán mắt vào điện thoại. Chuyến đi 3N2D lên Núi Cấm là lần đầu tiên tôi dám tắt điện thoại trọn 48 tiếng. Không khí mát lành trên núi và một giấc ngủ thật sâu, thật ngon — cảm giác đó lâu lắm rồi tôi mới có lại."
             </p>
             <div class="flex items-center gap-3 pt-4 border-t border-stone-200 dark:border-stone-800">
               <div class="w-10 h-10 rounded-full bg-[#264638] text-white flex items-center justify-center font-bold text-sm">
@@ -832,7 +840,7 @@
 
           <div class="zen-card p-8 rounded-3xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between">
             <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6 italic">
-              "Tôi đi chuyến Trà Sư vào dịp bản thân vừa trải qua cú sốc chia tay và áp lực khởi nghiệp thất bại. Buổi chiều ngồi trên xuồng ba lá nhìn đàn cò bay về tổ giữa rừng tràm tĩnh mịch, tôi đã bật khóc. Khóc xong tự nhiên thấy lòng nhẹ bẫng, như trút được cả tảng đá."
+              "Tôi đi chuyến Trà Sư vào một dịp cuối tuần muốn đổi gió khỏi thành phố. Buổi chiều ngồi trên xuồng ba lá, nhìn đàn cò bay về tổ giữa rừng tràm tĩnh mịch, tự nhiên thấy lòng nhẹ bẫng hẳn. Một buổi chiều bình yên hiếm có."
             </p>
             <div class="flex items-center gap-3 pt-4 border-t border-stone-200 dark:border-stone-800">
               <div class="w-10 h-10 rounded-full bg-[#C88D3D] text-[#141D17] flex items-center justify-center font-bold text-sm">
@@ -847,7 +855,7 @@
 
           <div class="zen-card p-8 rounded-3xl border border-stone-200 dark:border-stone-800 flex flex-col justify-between">
             <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed mb-6 italic">
-              "Bữa cơm ở nhà vườn Khmer bên hồ Tà Pạ làm tôi nhớ bà ngoại vô cùng. Đồ ăn mộc mạc, chén nước thốt nốt ngọt thanh tự nhiên. Người dân ở đây cười hiền hậu, làm tôi nhận ra mình đã quá khắt khe với bản thân bấy lâu nay."
+              "Bữa cơm ở nhà vườn Khmer bên hồ Tà Pạ làm tôi nhớ bà ngoại vô cùng. Đồ ăn mộc mạc, chén nước thốt nốt ngọt thanh tự nhiên. Người dân ở đây cười hiền hậu, khiến tôi thấy lòng mình nhẹ nhõm và thư thái hơn hẳn."
             </p>
             <div class="flex items-center gap-3 pt-4 border-t border-stone-200 dark:border-stone-800">
               <div class="w-10 h-10 rounded-full bg-stone-700 text-white flex items-center justify-center font-bold text-sm">
@@ -881,7 +889,7 @@
             <span class="font-serif text-xl font-bold tracking-wide text-white">7 NÚI TRAVEL</span>
           </div>
           <p class="text-xs text-stone-400 leading-relaxed mb-6">
-            Đơn vị tiên phong tổ chức các hành trình du lịch nghỉ dưỡng, chữa lành tâm hồn và kết nối thiên nhiên tại vùng đất Bảy Núi (Thất Sơn) - An Giang.
+            Đơn vị tiên phong tổ chức các hành trình du lịch nghỉ dưỡng, thư giãn và kết nối thiên nhiên tại vùng đất Bảy Núi (Thất Sơn) - An Giang.
           </p>
           <div class="text-xs text-amber-300 font-serif italic">
             "Về với Bảy Núi — Về với chính mình."
@@ -900,7 +908,7 @@
         </div>
 
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Hành Trình Chữa Lành</h4>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Các Hành Trình Nghỉ Dưỡng</h4>
           <ul class="space-y-2 text-xs text-stone-400">
             <li>Tour Thở Giữa Rừng Tràm (2N1D)</li>
             <li>Tour Sương Mây Digital Detox (3N2D)</li>
@@ -931,7 +939,7 @@
   </footer>
 
   <!-- ==============================================================
-       POP-UP ĐĂNG KÝ TOUR CHỮA LÀNH (BOOKING MODAL)
+       POP-UP ĐĂNG KÝ TOUR NGHỈ DƯỠNG (BOOKING MODAL)
        ============================================================== -->
   <div id="tour-booking-modal" class="hidden fixed inset-0 z-50 modal-overlay flex items-center justify-center p-4 transition-opacity duration-300 opacity-0">
     <div class="modal-dialog zen-card max-w-xl w-full p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-700 shadow-2xl relative transition-all duration-300 scale-95 translate-y-4 max-h-[92vh] overflow-y-auto">
@@ -1005,9 +1013,9 @@
 
         <div>
           <label for="booking-notes" class="block text-xs font-semibold uppercase tracking-wider mb-1.5 text-stone-600 dark:text-stone-300">
-            Nỗi áp lực hoặc mong muốn bạn muốn gửi gắm cho chuyến đi này?
+            Mong muốn hoặc điều bạn muốn chia sẻ cho chuyến đi này?
           </label>
-          <textarea id="booking-notes" rows="3" placeholder="Ví dụ: Dạo này mình bị mất ngủ và stress công việc nặng, mình muốn có không gian thật yên tĩnh, không ồn ào..." class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-sm focus:outline-none focus:border-[#C88D3D] transition-colors"></textarea>
+          <textarea id="booking-notes" rows="3" placeholder="Ví dụ: Mình muốn có không gian thật yên tĩnh, được nghỉ ngơi và gần gũi thiên nhiên..." class="w-full px-4 py-3 rounded-xl bg-stone-100 dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-sm focus:outline-none focus:border-[#C88D3D] transition-colors"></textarea>
         </div>
 
         <button type="submit" id="booking-submit-btn" class="w-full py-4 rounded-xl font-bold text-sm text-white bg-[#264638] dark:bg-[#C88D3D] dark:text-[#141D17] hover:opacity-95 shadow-lg shadow-[#264638]/20 transition-all flex items-center justify-center gap-2">

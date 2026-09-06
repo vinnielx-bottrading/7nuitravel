@@ -6,10 +6,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   initLucideIcons();
   initTheme();
+  initNavMenu();
   initTourModal();
   initAmbientSound();
   initTourFilter();
-  initBurnoutQuiz();
+  initMoodQuiz();
   initSmoothScroll();
   initLightbox();
 });
@@ -52,6 +53,51 @@ function initTheme() {
   }
 
   if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+}
+
+/* -------------------------------------------------------------
+ * 2b. Menu Điều Hướng Dạng Thả Xuống (Thay Cho Nav Ngang Dễ Tràn Header)
+ * ------------------------------------------------------------- */
+function initNavMenu() {
+  const toggleBtn = document.getElementById('nav-menu-toggle');
+  const dropdown = document.getElementById('nav-menu-dropdown');
+
+  if (!toggleBtn || !dropdown) return;
+
+  function closeMenu() {
+    dropdown.classList.add('hidden');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMenu() {
+    dropdown.classList.remove('hidden');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = !dropdown.classList.contains('hidden');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Đóng menu khi bấm ra ngoài
+  document.addEventListener('click', (e) => {
+    if (!dropdown.classList.contains('hidden') && !dropdown.contains(e.target) && e.target !== toggleBtn) {
+      closeMenu();
+    }
+  });
+
+  // Đóng menu khi bấm một mục điều hướng, hoặc nhấn Escape
+  dropdown.querySelectorAll('.nav-menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
 }
 
 /* -------------------------------------------------------------
@@ -298,9 +344,9 @@ function initTourFilter() {
 }
 
 /* -------------------------------------------------------------
- * 6. Trắc Nghiệm Tâm Trí (Burnout Assessment)
+ * 6. Trắc Nghiệm Tìm Chuyến Đi Hợp Tâm Trạng
  * ------------------------------------------------------------- */
-function initBurnoutQuiz() {
+function initMoodQuiz() {
   const submitQuizBtn = document.getElementById('quiz-submit-btn');
   const resultContainer = document.getElementById('quiz-result');
   const recommendedTourName = document.getElementById('quiz-tour-name');
@@ -320,16 +366,16 @@ function initBurnoutQuiz() {
     }
 
     let tourTitle = 'Tour "Sương Mây Đỉnh Cấm Sơn — Digital Detox" (3N2D)';
-    let tourDesc = 'Tâm trí bạn đang ở mức cần được buông bỏ hoàn toàn thiết bị số và áp lực. Ba ngày hít thở mây ngàn Thiên Cấm Sơn và thiền chuông tĩnh lặng sẽ giúp bạn sạc lại 100% năng lượng sống.';
+    let tourDesc = 'Bạn đang cần một khoảng thời gian trọn vẹn để rời xa thiết bị số và tận hưởng thiên nhiên. Ba ngày hít thở mây ngàn Thiên Cấm Sơn và thiền chuông tĩnh lặng sẽ giúp bạn nạp lại thật nhiều năng lượng.';
     let tourKey = 'Sương Mây Đỉnh Cấm Sơn';
 
     if (q1 === 'mild' && q2 === 'mild') {
       tourTitle = 'Tour "Thở Giữa Rừng Tràm Trà Sư" (2N1D)';
-      tourDesc = 'Bạn đang cần một khoảng lặng dịu dàng cuối tuần để thả trôi muộn phiền theo thảm bèo xanh và ngắm hoàng hôn thốt nốt bình yên.';
+      tourDesc = 'Bạn đang cần một khoảng lặng dịu dàng cuối tuần, thả mình theo thảm bèo xanh và ngắm hoàng hôn thốt nốt bình yên.';
       tourKey = 'Thở Giữa Rừng Tràm';
     } else if (q3 === 'nature') {
       tourTitle = 'Tour "Hoàng Hôn Tà Pạ & Cánh Đồng Tri Tôn" (2N1D)';
-      tourDesc = 'Không gian khoáng đạt của hồ ngọc bích Tà Pạ và cánh đồng thốt nốt bao la sẽ giúp mở rộng góc nhìn và làm dịu lại những mỏi mệt bên trong bạn.';
+      tourDesc = 'Không gian khoáng đạt của hồ ngọc bích Tà Pạ và cánh đồng thốt nốt bao la sẽ giúp bạn thư giãn và có thêm thật nhiều năng lượng mới.';
       tourKey = 'Hoàng Hôn Tà Pạ';
     }
 
