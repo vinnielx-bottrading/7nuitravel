@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ------------------------------------------------------------
+    // Mekong Retreat (Victoria Núi Sam Lodge) — site sẵn có
+    // ------------------------------------------------------------
+    match /wellness_schedule_registrations/{doc} {
+      allow create: if true;
+      allow read: if request.auth != null;
+      allow update, delete: if false;
+    }
+    match /wellness_survey_responses/{doc} {
+      allow create: if true;
+      allow read: if request.auth != null;
+      allow update, delete: if false;
+    }
+    match /wellness_departure_status/{docId} {
+      allow read: if true;                              // ai cũng đọc được — để sổ tay công khai hiển thị trạng thái
+      allow create, update: if request.auth != null;     // chỉ tài khoản admin đã đăng nhập mới được ghi
+      allow delete: if false;
+    }
+
+    // ------------------------------------------------------------
+    // 7 Núi Travel — form đăng ký tour chữa lành Thất Sơn
+    // ------------------------------------------------------------
+    match /dang_ky_tour/{docId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+  }
+}
