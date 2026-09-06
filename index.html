@@ -76,10 +76,22 @@
   <!-- ==============================================================
        TOP PHILOSOPHY BAR
        ============================================================== -->
-  <div class="bg-[#264638] text-stone-200 text-xs py-2.5 px-4 text-center tracking-wider font-medium border-b border-[#385A49]">
-    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
-      <i data-lucide="leaf" class="w-3.5 h-3.5 text-[#C88D3D]"></i>
-      <span>Về với Thất Sơn — Nơi bạn được phép gác lại những âu lo và thở một hơi thật sâu • Nhóm nhỏ tối đa 8 khách để trọn vẹn sự tĩnh lặng</span>
+  <div class="bg-[#264638] text-stone-200 text-xs py-2 px-4 text-center tracking-wider font-medium border-b border-[#385A49]">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5">
+      <span class="flex items-center gap-2">
+        <i data-lucide="leaf" class="w-3.5 h-3.5 text-[#C88D3D] shrink-0"></i>
+        <span>Về với Thất Sơn — Nơi bạn được phép gác lại những âu lo và thở một hơi thật sâu • Nhóm nhỏ tối đa 8 khách để trọn vẹn sự tĩnh lặng</span>
+      </span>
+
+      <!-- Hotline nổi bật ngay trên thanh triết lý, dễ thấy trước cả menu -->
+      <a href="tel:0911307874" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#C88D3D] text-[#141D17] font-bold tracking-wide hover:bg-amber-400 transition-colors shrink-0" title="Bấm để gọi ngay cho Mr. Đăng — 0911.307.874">
+        <span class="relative flex h-1.5 w-1.5 shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-700 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-700"></span>
+        </span>
+        <i data-lucide="phone-call" class="w-3 h-3"></i>
+        <span class="font-mono">0911.307.874</span>
+      </a>
     </div>
   </div>
 
@@ -90,62 +102,48 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Logo (Concept 2 Selected) -->
-      <a href="#hero" class="flex items-center gap-3 group">
-        <img src="./assets/logo.jpg" alt="7 Núi Travel Logo" class="w-12 h-12 rounded-2xl object-cover shadow-md border border-[#264638]/20 dark:border-[#C88D3D]/30 group-hover:scale-105 transition-transform duration-300">
-        <div>
-          <span class="font-serif text-2xl font-bold tracking-wide text-[#264638] dark:text-[#C88D3D] block leading-tight">7 NÚI TRAVEL</span>
-          <span class="text-[11px] font-medium tracking-widest uppercase text-stone-500 dark:text-stone-400 block -mt-0.5">Nghỉ Dưỡng & Chữa Lành Thất Sơn</span>
+      <a href="#hero" class="flex items-center gap-3 group shrink-0">
+        <img src="./assets/logo.jpg" alt="7 Núi Travel Logo" class="w-12 h-12 rounded-2xl object-cover shadow-md border border-[#264638]/20 dark:border-[#C88D3D]/30 group-hover:scale-105 transition-transform duration-300 shrink-0">
+        <div class="whitespace-nowrap">
+          <span class="font-serif text-xl xl:text-2xl font-bold tracking-wide text-[#264638] dark:text-[#C88D3D] block leading-tight">7 NÚI TRAVEL</span>
+          <span class="hidden sm:block text-[10px] xl:text-[11px] font-medium tracking-widest uppercase text-stone-500 dark:text-stone-400 -mt-0.5">Nghỉ Dưỡng & Chữa Lành Thất Sơn</span>
         </div>
       </a>
 
       <!-- Desktop Nav Menu -->
-      <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-stone-700 dark:text-stone-300">
-        <a href="#about" class="hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Về 7 Núi</a>
-        <a href="#the-mirror" class="hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Nỗi Niềm Cần Buông</a>
-        <a href="#tours" class="hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Hành Trình Chữa Lành</a>
-        <a href="#scenery" class="hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Cảnh Sắc An Giang</a>
-        <a href="#quiz" class="hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Trắc Nghiệm Tâm Trí</a>
-        <a href="#stories" class="hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Chuyện Khách Đi</a>
+      <nav class="hidden xl:flex items-center gap-5 2xl:gap-7 text-sm font-medium text-stone-700 dark:text-stone-300 shrink-0">
+        <a href="#about" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Về 7 Núi</a>
+        <a href="#the-mirror" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Nỗi Niềm Cần Buông</a>
+        <a href="#tours" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Hành Trình Chữa Lành</a>
+        <a href="#scenery" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Cảnh Sắc An Giang</a>
+        <a href="#quiz" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Trắc Nghiệm Tâm Trí</a>
+        <a href="#stories" class="whitespace-nowrap hover:text-[#264638] dark:hover:text-[#C88D3D] transition-colors">Chuyện Khách Đi</a>
       </nav>
 
       <!-- Header Tools & CTA -->
-      <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
 
-        <!-- Ambient Zen Sound Player Button (ẩn trên mobile để nhường chỗ cho số hotline) -->
-        <button id="ambient-sound-toggle" class="hidden md:flex px-3 py-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-800/60 text-xs font-medium text-stone-600 dark:text-stone-300 hover:border-[#C88D3D] transition-all items-center gap-2 focus:outline-none" title="Bật/Tắt tiếng chuông thiền thư giãn">
+        <!-- Ambient Zen Sound Player Button (ẩn dưới lg để nhường chỗ, hotline đã có trên thanh triết lý) -->
+        <button id="ambient-sound-toggle" class="hidden lg:flex px-3 py-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-800/60 text-xs font-medium text-stone-600 dark:text-stone-300 hover:border-[#C88D3D] transition-all items-center gap-2 focus:outline-none" title="Bật/Tắt tiếng chuông thiền thư giãn">
           <div class="flex items-end h-4">
             <span class="sound-bar"></span>
             <span class="sound-bar"></span>
             <span class="sound-bar"></span>
             <span class="sound-bar"></span>
           </div>
-          <span class="hidden lg:inline">Chuông Thiền</span>
+          <span class="hidden 2xl:inline whitespace-nowrap">Chuông Thiền</span>
         </button>
 
         <!-- Theme Toggle -->
-        <button id="theme-toggle" class="p-2.5 rounded-xl border border-stone-300 dark:border-stone-700 text-stone-600 dark:text-stone-300 hover:text-[#C88D3D] transition-colors focus:outline-none" aria-label="Đổi chế độ sáng / đêm">
+        <button id="theme-toggle" class="p-2.5 rounded-xl border border-stone-300 dark:border-stone-700 text-stone-600 dark:text-stone-300 hover:text-[#C88D3D] transition-colors focus:outline-none shrink-0" aria-label="Đổi chế độ sáng / đêm">
           <i data-lucide="sun" class="theme-icon-sun w-4 h-4"></i>
           <i data-lucide="moon" class="theme-icon-moon w-4 h-4 hidden"></i>
         </button>
 
-        <!-- Prominent Hotline Header Pill: luôn hiển thị, kể cả trên mobile, bấm để gọi thẳng -->
-        <a href="tel:0911307874" class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#264638] to-[#1B352A] dark:from-[#C88D3D] dark:to-[#B2792D] border border-[#C88D3D]/50 text-white dark:text-[#141D17] hover:scale-105 transition-all shadow-md hover:shadow-lg group animate-pulse-slow" title="Bấm để gọi ngay cho Mr. Đăng — 0911.307.874">
-          <span class="relative flex h-2.5 w-2.5 shrink-0">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-          </span>
-          <i data-lucide="phone-call" class="w-4 h-4 group-hover:rotate-12 transition-transform"></i>
-          <span class="text-xs font-medium leading-tight whitespace-nowrap">
-            <span class="hidden md:inline">Hotline: </span>
-            <strong class="text-sm sm:text-base font-extrabold tracking-wider font-mono">0911.307.874</strong>
-            <span class="hidden lg:inline text-[11px] opacity-80 font-semibold">(Mr. Đăng)</span>
-          </span>
-        </a>
-
         <!-- Open Pop-up Tour Booking Button -->
-        <button class="open-tour-modal px-3 sm:px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#264638] hover:bg-[#1B352A] dark:bg-[#C88D3D] dark:text-[#141D17] dark:hover:bg-[#B2792D] shadow-sm hover:shadow-md transition-all flex items-center gap-2" data-tour="Tư vấn chung">
+        <button class="open-tour-modal px-3 sm:px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#264638] hover:bg-[#1B352A] dark:bg-[#C88D3D] dark:text-[#141D17] dark:hover:bg-[#B2792D] shadow-sm hover:shadow-md transition-all flex items-center gap-2 shrink-0" data-tour="Tư vấn chung">
           <i data-lucide="compass" class="w-4 h-4"></i>
-          <span class="hidden sm:inline">Đặt Tour Nghỉ Dưỡng</span>
+          <span class="hidden sm:inline whitespace-nowrap">Đặt Tour Nghỉ Dưỡng</span>
         </button>
       </div>
 
