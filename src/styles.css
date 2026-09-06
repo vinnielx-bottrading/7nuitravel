@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+.font-serif-title {
+  font-family: var(--font-serif);
+}
+
+/* Custom Zen Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #141D17;
+}
+::-webkit-scrollbar-thumb {
+  background: #C88D3D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #264638;
+}
+
+/* Gentle mist animation */
+.mist-layer {
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(232, 222, 207, 0.4) 0%, rgba(250, 247, 242, 0) 70%);
+  filter: blur(40px);
+  z-index: 1;
+  animation: float-mist 16s ease-in-out infinite alternate;
+}
+.dark .mist-layer {
+  background: radial-gradient(ellipse at center, rgba(38, 70, 56, 0.25) 0%, rgba(20, 29, 23, 0) 70%);
+}
+
+@keyframes float-mist {
+  0% { transform: translate(-3%, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate(3%, -15px) scale(1.05); opacity: 0.8; }
+  100% { transform: translate(-2%, 10px) scale(0.98); opacity: 0.6; }
+}
+
+/* Organic soft card */
+.zen-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(231, 223, 212, 0.8);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.dark .zen-card {
+  background: rgba(26, 39, 31, 0.7);
+  border: 1px solid rgba(46, 68, 55, 0.6);
+}
+.zen-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(38, 70, 56, 0.08);
+}
+.dark .zen-card:hover {
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.4);
+  border-color: rgba(200, 141, 61, 0.4);
+}
+
+/* Modal animation */
+.modal-overlay {
+  background: rgba(18, 28, 22, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Sound wave pulse */
+.sound-bar {
+  display: inline-block;
+  width: 3px;
+  background-color: #C88D3D;
+  border-radius: 2px;
+  margin: 0 1px;
+}
+.playing .sound-bar:nth-child(1) { height: 10px; animation: bounce 1.2s infinite ease-in-out 0.1s; }
+.playing .sound-bar:nth-child(2) { height: 16px; animation: bounce 1.2s infinite ease-in-out 0.3s; }
+.playing .sound-bar:nth-child(3) { height: 12px; animation: bounce 1.2s infinite ease-in-out 0.5s; }
+.playing .sound-bar:nth-child(4) { height: 7px;  animation: bounce 1.2s infinite ease-in-out 0.2s; }
+
+@keyframes bounce {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+/* Gentle highlight pulse for the hotline pill in the header */
+.animate-pulse-slow {
+  animation: hotline-glow 2.8s ease-in-out infinite;
+}
+@keyframes hotline-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 141, 61, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(200, 141, 61, 0); }
+}
+
+/* Subtle image zoom */
+.nature-img-wrapper {
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+.nature-img-wrapper img {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.nature-img-wrapper:hover img {
+  transform: scale(1.04);
+}
